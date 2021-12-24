@@ -54,7 +54,7 @@ class Annonce extends App
             <form method="post" action="'.($fav ? '/annonce/favoris/add"' : '/annonce/favoris/delete"'). '>
                 <h1 class="sr-only list-group-item list-group-item-primary">Annonce '.$annonce->id.'</h1>';
         if ($annonce->avatar)
-            $res .= '<img src="'.realpath('avatar/'.$annonce->avatar).'" alt="avatar">Lien</img>';
+            $res .= '<img src="../avatar/'.$annonce->avatar.'" alt="avatar" class="img-thumbnail" style="width:40%; height: 200px;" />';
                 $res .= '
                 <ul>
                     <li class="list-group-item list-group-item-success">Titre: '.$annonce->title.'</li>

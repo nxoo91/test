@@ -25,7 +25,7 @@ function addAnnonce() : string
         if (empty($_FILES['file']['name']))
             Annonce::addAnnonce([$_POST['title'], $_POST['description'], null]);
         else{
-            $dst =  __DIR__.'/../../src/avatar/'.$_FILES['file']['name'];
+            $dst = 'avatar/'.$_FILES['file']['name'];
             if (!move_uploaded_file($_FILES['file']['tmp_name'], $dst))
                 return App::setNotif('Erreur pendant l\'upload du fichier');
             Annonce::addAnnonce([$_POST['title'], $_POST['description'], $_FILES['file']['name']]);
@@ -35,7 +35,7 @@ function addAnnonce() : string
     return App::setNotif('Merci de remplir tous les champs'); 
 }
 
-function addFavoris() : ?string
+function addFavoris() : ?string0
 {
     if (!empty($_POST['id']) && is_numeric($_POST['id']))
     {
